@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Bank WebApp</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>💰 BANK 4.0</h1>
+
+  <div class="card">
+    <h3>Расходы по категориям</h3>
+    <canvas id="chart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById("chart");
+
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Продукты", "Транспорт", "Развлечения"],
+        datasets: [{
+          label: "₸",
+          data: [12000, 5000, 8000],
+          backgroundColor: ["#38bdf8", "#f87171", "#34d399"]
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
